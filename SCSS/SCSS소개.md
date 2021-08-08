@@ -1,21 +1,113 @@
-# 업무일지
+# Sass와 SCSS 소개
 
-### ✔ Summary
+> CSS 작성을 위한 작고 가벼운 언어입니다.
 
-- [x] 08:00~12:00 SCSS
-- [x] 15:00~02:00 PJT & SCSS
+- `Sass` : SCSS와 작성하는데 있어서 구조적 차이가 있고 작성이 번거롭고 복잡할 수 있다.
 
-
-
-## ✨ 오늘 배운 내용
-
-- [SCSS 기초 문법](./SCSS/SCSS소개.md)
-- [Boxes Project](./SCSS/BoxesProject.md)
+- `SCSS` : 기존에 알던 CSS와 유사하게 작성할 수 있기 때문에 친근하게 느껴져 배우기가 쉽다.
 
 
 
+## SCSS
 
-## 👀 수행한 업무 및 작성한 코드
+### 1. 컴파일 해보기
+
+- VS Code에서 익스텐션인 Live Sass Compiler를 사용합니다 :D
+
+![image-20210808090304764](SCSS소개.assets/image-20210808090304764.png)
+
+
+
+- 컴파일을 하는 방법은 다음과 같습니다.
+
+  - / index.html 파일 생성
+
+    ```html
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Document</title>
+    </head>
+    <body>
+      
+    </body>
+    </html>
+    ```
+
+  - scss / test.scss 파일 생성
+
+    ```scss
+    body {
+      font-size: 14px;
+      background-color: azure;
+    }
+    ```
+
+  - VScode 하단의 watch sass 누르기 (익스텐션인 Live Sass Compiler 설치해야 보입니다.)
+
+  - scss / .css 파일 확인하기
+
+  - html 파일 ref 추가 & Live Server로 html 열기
+
+    ```html
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Document</title>
+      <link rel="stylesheet" href="sass/test.css">
+    </head>
+    <body>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. In eligendi provident illo error mollitia placeat iusto, est aspernatur corrupti numquam pariatur, voluptates impedit perspiciatis eveniet ipsam enim fuga, suscipit qui?</p>
+    </body>
+    </html>
+    ```
+
+  - scss 파일 내용을 변경하여 => css를 자동으로 변경하게 합니다.
+
+    ```html
+    // index.html
+    	<p id="box">Lorem ipsum dolor sit amet consectetur adipisicing elit. In eligendi provident illo error mollitia placeat iusto, est aspernatur corrupti numquam pariatur, voluptates impedit perspiciatis eveniet ipsam enim fuga, suscipit qui?</p>
+    ```
+
+    ```html
+    // test.scss
+    
+    #box {
+      background-color: blueviolet;
+    }
+    ```
+
+  - 변수를 활용하여 할당하기
+
+    ```scss
+    // test.scss
+    
+    $color-blue: #00f;
+    $color-red: #f00;
+    $color-yellow: #ff0;
+    
+    body {
+      font-size: 14px;
+      background-color: color-blue;
+    }
+    
+    #box {
+      color: $color-yellow;
+      background-color: $color-red;
+    }
+    ```
+
+  - 결과
+
+    ![image-20210808092108355](SCSS소개.assets/image-20210808092108355.png)
+
+
 
 ### 2. 실습하기
 
@@ -209,6 +301,7 @@ a {
 ```
 
 ```scss
+
 #box-1 {
   font-size: 40px;
   background-color: #ffcccc;
@@ -230,6 +323,7 @@ a {
 ```
 
 ```scss
+
 #box-1 {
   font-size: 40px;
   background-color: #ffcccc;
@@ -291,6 +385,7 @@ a {
 > 미디어 View Port 에 따른 화면을 다르게 보여주어야 할 때 사용됩니다.
 
 ```scss
+
 @media screen and (max-width: 500px) {
   #box1 {
     font-size: 14px;
@@ -487,14 +582,4 @@ body {
   @include theme('default')
 }
 ```
-
-
-
-
-
-## 🐱‍💻 아쉬운 점 & 느낀 점
-
-- PJT에 SCSS를 활용해보자!
-
- 
 
